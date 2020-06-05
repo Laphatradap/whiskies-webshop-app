@@ -15,12 +15,29 @@ $colors: (islands-dark: #9E1B34,
 
 @function color($color-name) {
   @return map-get($colors, $color-name)
-};
+}
+
+;
 
 
 @mixin container($width: 90%, $max-width: 60em) {
   width: $width;
   margin: 0 auto;
   max-width: $max-width;
-};
+}
 
+;
+
+$asset-base-path: '../assets';
+
+@function asset($type, $file) {
+  @return url($asset-base-path + '/' + $file);
+}
+
+;
+
+@function image($file) {
+  @return asset('images', $file);
+}
+
+;

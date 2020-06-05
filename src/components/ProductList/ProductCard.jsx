@@ -4,7 +4,9 @@ import util from "../../util";
 const ProductCard = (props) => {
   return (
     <div>
-      <img src={props.image} alt={props.image} />
+      <div className="image-container">
+        <img src={require(`../../assets/${props.image}`)} alt={props.image} />
+      </div>
       <h1>{props.title}</h1>
       <p>{util.formatCurrency(props.cost)}</p>
       <p>{props.region} Region</p>

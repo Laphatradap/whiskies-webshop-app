@@ -15,7 +15,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: blue;
 }
 
 .filter-container {
@@ -53,6 +52,13 @@
 .filter.current {
   background: #E8E8E8;
   border: 1px solid black;
+}
+
+.image-container {
+  background-image: url("../assets/card-bg.svg");
+  background-color: black;
+  background-repeat: none;
+  background-size: contain;
 }
 
 html {

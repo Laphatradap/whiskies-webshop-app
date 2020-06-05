@@ -1,14 +1,12 @@
 .product-container {
   @include container;
 
-
 }
 
 .container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  background: blue;
 }
 
 .filter-container {
@@ -38,4 +36,11 @@
     border: 1px solid black;
   }
 
+}
+
+.image-container {
+  background-image: image('card-bg.svg');
+  background-color: black;
+  background-repeat: none;
+  background-size: contain;
 }
