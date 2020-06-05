@@ -1,14 +1,13 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import ProductList from "./components/ProductList";
-
 import "./styles/styles.css";
+import Homepage from "./components/Homepage";
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path="/" component={ProductList} />
+        <Route path="/" component={Homepage} />
       </Switch>
     </div>
   );
