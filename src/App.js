@@ -1,13 +1,15 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
+import ProductList from "./components/ProductList";
+
 import "./styles/styles.css";
 
-import Collection from "./components/collection"
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Collection />
-      </header>
+      <Switch>
+        <Route path="/" component={ProductList} />
+      </Switch>
     </div>
   );
 }
