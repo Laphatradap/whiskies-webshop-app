@@ -55,7 +55,7 @@ const ProductList = () => {
   return (
     <div>
       <div className="product-container">
-        <h1>Whiskey Selection</h1>
+        <div className="title">Whiskey Selection</div>
         <div className="filter-container">{renderFilter}</div>
       </div>
       {filter === "all" ? (

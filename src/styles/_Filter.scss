@@ -1,0 +1,28 @@
+.filter-container {
+  @include container;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.filter {
+  border: 1px solid darken($gray, 10);
+  border-radius: 20px;
+  padding: 7px 15px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  text-decoration: none;
+  margin: 5px;
+
+  &:hover {
+    background: $gray;
+    cursor: pointer;
+  }
+
+  &.current {
+    background: $gray;
+    border: 1px solid $gray;
+  }
+}

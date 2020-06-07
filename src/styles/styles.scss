@@ -1,6 +1,7 @@
 @import "./variables";
 @import "./ProductList";
-
+@import "./Article";
+@import "./Filter";
 
 * {
   box-sizing: border-box;
@@ -9,7 +10,7 @@
 }
 
 body {
-  font-family: 'Cabin', sans-serif;
+  font-family: "Cabin", sans-serif;
   line-height: 1.5;
   margin: 0;
   font-size: 1rem;
