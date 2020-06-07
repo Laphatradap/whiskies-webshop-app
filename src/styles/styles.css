@@ -1,51 +1,239 @@
-html {
-  font-size: 10px;
+:export {
+  islands: linear-gradient(to right, #D71E44, #9E1B34);
+  islay: linear-gradient(to right, #A5238E, #6E2671);
+  highlands: linear-gradient(to right, #563494, #322773);
+  lowlands: linear-gradient(to right, #0663AE, #174272);
+  speyside: linear-gradient(to right, #1AB467, #007B46);
+  campbeltown: linear-gradient(to right, #F3B41B, #D29D2A);
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3rem;
+  font-style: italic;
+  padding: 30px;
+  letter-spacing: -0.3rem;
+  font-weight: 500;
 }
 
-html,
-body,
-#root,
-.App,
-.fullHeight {
+.products {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 90em;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 20px;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+}
+
+.line {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+}
+
+.product-card {
+  margin: 2px;
+  margin-bottom: 50px;
+  background: #333333;
+  background-image: image("card-bg.svg");
+  background-position: right bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 9px;
+  color: white;
+  height: 544px;
+  position: relative;
+  width: 400px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product-title {
+  position: absolute;
+  left: 0;
+  top: 280px;
+  padding-left: 36px;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding-bottom: 5px;
+}
+
+.product-title.price {
+  top: 370px;
+}
+
+.product-region {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #e6e6e6;
+  padding-bottom: 19px;
+  position: absolute;
+  left: 0;
+  top: 320px;
+  padding-left: 36px;
+}
+
+.taste-info {
+  position: absolute;
+  left: -20px;
+  bottom: 36px;
+  height: 60px;
+  -webkit-transform: skew(160deg);
+          transform: skew(160deg);
+  border-radius: 7px;
+}
+
+.taste-info div {
+  -webkit-transform: skew(-160deg);
+          transform: skew(-160deg);
+  display: inline-block;
+  bottom: 36px;
+  margin: 1px;
+  padding: 15px 17px;
+  text-transform: capitalize;
+  font-style: normal;
+  font-size: 1rem;
+}
+
+.product-image {
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+}
+
+.product-image img {
+  height: 500px;
+  width: 160px;
+}
+
+.article-container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 90em;
+  margin: 0 auto;
+  padding: 20px 45px;
+}
+
+.article {
+  background-size: cover;
+  background-position: center;
+  width: auto;
+  height: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  border-radius: 9px;
+}
+
+.article .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
   height: 100%;
+  z-index: 1;
+  background: rgba(51, 51, 51, 0.8);
+  border-radius: 9px;
 }
 
-*,
-::before,
-::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+.article .article-text {
+  position: absolute;
+  left: 36px;
+  bottom: 90px;
+  color: white;
+  font-weight: 500;
 }
 
-body {
-  font-family: 'Cabin', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 400;
+.article .article-text .title {
+  word-break: break-word;
+  text-align: initial;
+  width: 10em;
+  font-weight: 500;
   line-height: 1;
 }
 
-a {
+.article .article-text .description {
+  word-break: break-word;
+  line-height: 1.5;
+  text-align: initial;
+  width: 44em;
+  padding: 1px 30px 6px 30px;
+}
+
+.filter-container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 90em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.filter {
+  border: 1px solid #cdcdcd;
+  border-radius: 20px;
+  padding: 7px 15px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
   text-decoration: none;
+  margin: 5px;
+}
+
+.filter:hover {
+  background: #e6e6e6;
   cursor: pointer;
 }
 
-a,
-a:hover {
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
+.filter.current {
+  background: #e6e6e6;
+  border: 1px solid #e6e6e6;
 }
 
-.main {
-  width: 100%;
-  height: calc(100% - 6.5rem);
-  max-width: 1450px;
-  padding: 0 10px;
-  margin: 0 auto;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Cabin", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  font-size: 1rem;
+  overflow-x: hidden;
 }
 /*# sourceMappingURL=styles.css.map */

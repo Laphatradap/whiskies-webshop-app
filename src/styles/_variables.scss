@@ -1,0 +1,40 @@
+$background-opacity: 0.8;
+$background-color: #333333;
+$gray: #e6e6e6;
+$text-color: white;
+$islands: linear-gradient(to right, #D71E44, #9E1B34);
+$islay: linear-gradient(to right, #A5238E, #6E2671);
+$highlands: linear-gradient(to right, #563494, #322773);
+$lowlands: linear-gradient(to right, #0663AE, #174272);
+$speyside:linear-gradient(to right, #1AB467, #007B46);
+$campbeltown: linear-gradient(to right, #F3B41B, #D29D2A);
+
+:export {
+  islands: $islands;
+  islay: $islay;
+  highlands: $highlands;
+  lowlands: $lowlands;
+  speyside: $speyside;
+  campbeltown: $campbeltown;
+}
+
+;
+
+@mixin container($width: 100%, $max-width: 90em) {
+  width: $width;
+  margin: 0 auto;
+  max-width: $max-width;
+}
+
+;
+
+
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3rem;
+  font-style: italic;
+  padding: 30px;
+  letter-spacing: -0.3rem;
+  font-weight: 500;
+}

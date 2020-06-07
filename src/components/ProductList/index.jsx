@@ -7,10 +7,11 @@ import ProductCard from "./ProductCard";
 const ProductList = () => {
   const dispatch = useDispatch();
   const reduxProducts = useSelector(getAllProducts);
+  const [filter, setFilter] = useState("all");
+
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
-  const [region, setRegion] = useState("");
 
   if (!reduxProducts) return "Loading...";
 
@@ -19,14 +20,17 @@ const ProductList = () => {
     return r;
   }, {});
 
-  const renderRegions = Object.entries(groupByRegion).map(([key]) => {
-    return (
-      <div key={key} onClick={() => setRegion(key)} className="regionInfo">
-        <p>{key}</p>
-      </div>
-    );
+  let regions = Object.entries(groupByRegion).map(([key]) => {
+    return key;
   });
-  console.log("OUTPUT: ProductList -> renderRegions", renderRegions);
+  regions.push("all");
+  const sortedFilter = regions.map((item) => item).sort();
+
+  const renderFilter = sortedFilter.map((item) => (
+    <div className="filter" key={item} onClick={() => setFilter(item)}>
+      {item}
+    </div>
+  ));
 
   const renderAllProducts = () => {
     return reduxProducts.map((p) => <ProductCard key={p.title} {...p} />);
@@ -36,8 +40,8 @@ const ProductList = () => {
     ([key, value]) => {
       return (
         <div key={key}>
-          {key === region && (
-            <div>
+          {key === filter && (
+            <div className="products">
               {value.map((v) => (
                 <ProductCard key={v.title} {...v} />
               ))}
@@ -50,16 +54,12 @@ const ProductList = () => {
 
   return (
     <div>
-      <h1>Whiskey Selection</h1>
-      <div>
-        <div onClick={() => setRegion("")}>all</div>
-        <div>{renderRegions}</div>
+      <div className="product-container">
+        <div className="title">Whiskey Selection</div>
+        <div className="filter-container">{renderFilter}</div>
       </div>
-
-      {region === "" ? (
-        <>
-          <div>{renderAllProducts()}</div>
-        </>
+      {filter === "all" ? (
+        <div className="products">{renderAllProducts()}</div>
       ) : (
         <div>{renderProductsByRegion}</div>
       )}

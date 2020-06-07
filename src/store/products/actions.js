@@ -3,7 +3,7 @@ import axios from "axios";
 export const productsFetched = (products) => {
   return {
     type: "PRODUCTS_FETCHED",
-    products
+    products,
   };
 };
 
@@ -15,3 +15,16 @@ export const fetchProducts = () => async (dispatch) => {
     console.log(error);
   }
 };
+
+// export const filterProducts = (products, region) => (dispatch) => {
+//   dispatch({
+//     type: "PRODUCTS_FILTERED",
+//     payload: {
+//       region: region,
+//       items:
+//         region === ""
+//           ? products
+//           : products.filter((product) => product.region === region),
+//     },
+//   });
+// };

@@ -7,6 +7,7 @@ export default function productReducer(state = initialState, action) {
         ...state,
         list: [...action.products],
       };
+
     default:
       return state;
   }
