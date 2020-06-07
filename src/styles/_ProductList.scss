@@ -1,12 +1,14 @@
 .product-container {
-  @include container;
 
-}
-
-.container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    font-style: italic;
+    padding: 30px;
+    letter-spacing: -0.3rem;
+    font-weight: 500;
+  }
 }
 
 .filter-container {
@@ -15,32 +17,117 @@
   flex-flow: row wrap;
   justify-content: center;
   margin: 0 auto;
+  padding-bottom: 30px;
 }
 
 .filter {
   border: 1px solid color(gray);
   border-radius: 20px;
   padding: 7px 15px;
-  font-size: 1.3rem;
+  font-size: 0.8rem;
   text-transform: capitalize;
   text-decoration: none;
   margin: 5px;
 
   &:hover {
     background: color(gray);
-    cursor: pointer
+    cursor: pointer;
   }
 
   &.current {
     background: color(gray);
     border: 1px solid black;
   }
-
 }
 
-.image-container {
-  background-image: image('card-bg.svg');
-  background-color: black;
-  background-repeat: none;
-  background-size: contain;
+.products {
+  @include container;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-items: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.line {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+}
+
+.product-card {
+  margin: 2px;
+  margin-bottom: 50px;
+  background: #333333;
+  background-image: image("card-bg.svg");
+  background-position: right bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 9px;
+  color: white;
+  height: 544px;
+  position: relative;
+  width: 400px;
+  align-items: center;
+}
+
+.product-title {
+  position: absolute;
+  left: 0;
+  top: 280px;
+  padding-left: 36px;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding-bottom: 5px;
+
+  &.price {
+    top: 370px;
+  }
+}
+
+.product-region {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: gray;
+  padding-bottom: 19px;
+  position: absolute;
+  left: 0;
+  top: 320px;
+  padding-left: 36px;
+}
+
+.taste-info {
+  position: absolute;
+  left: -20px;
+  bottom: 36px;
+  height: 60px;
+  transform: skew(160deg);
+  border-radius: 7px;
+
+  div {
+    transform: skew(-160deg);
+    display: inline-block;
+    bottom: 36px;
+    margin: 1px;
+    padding: 15px 17px;
+    text-transform: capitalize;
+    font-style: normal;
+    font-size: 1rem;
+  }
+}
+
+.product-image {
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+
+  img {
+    height: 500px;
+    width: 160px;
+  }
 }

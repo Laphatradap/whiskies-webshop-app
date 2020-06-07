@@ -20,14 +20,6 @@ const ProductList = () => {
     return r;
   }, {});
 
-  // const renderRegions = Object.entries(groupByRegion).map(([key]) => {
-  //   return (
-  //     <div className="regions" key={key} onClick={() => setRegion(key)}>
-  //       <div className="region">{key}</div>
-  //     </div>
-  //   );
-  // });
-
   let regions = Object.entries(groupByRegion).map(([key]) => {
     return key;
   });
@@ -49,7 +41,7 @@ const ProductList = () => {
       return (
         <div key={key}>
           {key === filter && (
-            <div>
+            <div className="products">
               {value.map((v) => (
                 <ProductCard key={v.title} {...v} />
               ))}
@@ -61,11 +53,13 @@ const ProductList = () => {
   );
 
   return (
-    <div className="product-container">
-      <h1>Whiskey Selection</h1>
-      <div className="filter-container">{renderFilter}</div>
+    <div>
+      <div className="product-container">
+        <h1>Whiskey Selection</h1>
+        <div className="filter-container">{renderFilter}</div>
+      </div>
       {filter === "all" ? (
-        <div>{renderAllProducts()}</div>
+        <div className="products">{renderAllProducts()}</div>
       ) : (
         <div>{renderProductsByRegion}</div>
       )}

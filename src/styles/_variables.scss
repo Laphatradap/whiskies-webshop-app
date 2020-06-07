@@ -1,26 +1,44 @@
-$colors: (islands-dark: #9E1B34,
-  islands-light: #D71E44,
-  islay-dark: #6E2671,
-  islay-light: #A5238E,
-  highlands-dark: #322773,
-  highlands-light: #563494,
-  lowlands-dark: #174272,
-  lowlands-light: #0663AE,
-  speyside-dark: #007B46,
-  speyside-light: #1AB467,
-  campbeltown-dark: #D29D2A,
-  campbeltown-light: #F3B41B,
-  gray: #E8E8E8,
-);
+// $colors: (islandsDark: #9E1B34,
+//   islands-light: #D71E44,
+//   islay-dark: #6E2671,
+//   islay-light: #A5238E,
+//   highlands-dark: #322773,
+//   highlands-light: #563494,
+//   lowlands-dark: #174272,
+//   lowlands-light: #0663AE,
+//   speyside-dark: #007B46,
+//   speyside-light: #1AB467,
+//   campbeltown-dark: #D29D2A,
+//   campbeltown-light: #F3B41B,
+//   gray: #E8E8E8,
+// );
 
-@function color($color-name) {
-  @return map-get($colors, $color-name)
+$islands: linear-gradient(to right, #D71E44, #9E1B34);
+$islay: linear-gradient(to right, #A5238E, #6E2671);
+$highlands: linear-gradient(to right, #563494, #322773);
+$lowlands: linear-gradient(to right, #0663AE, #174272);
+$speyside:linear-gradient(to right, #1AB467, #007B46);
+$campbeltown: linear-gradient(to right, #F3B41B, #D29D2A);
+
+:export {
+  islands: $islands;
+  islay: $islay;
+  highlands: $highlands;
+  lowlands: $lowlands;
+  speyside: $speyside;
+  campbeltown: $campbeltown;
 }
 
 ;
 
+// @function color($color-name) {
+//   @return map-get($colors, $color-name)
+// }
 
-@mixin container($width: 90%, $max-width: 60em) {
+// ;
+
+
+@mixin container($width: 100%, $max-width: 90em) {
   width: $width;
   margin: 0 auto;
   max-width: $max-width;
