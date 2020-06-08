@@ -12,9 +12,9 @@ const ArticleContainer = () => {
   }, [dispatch]);
 
   const renderArticles = () => {
-    return reduxArticles.map((a) => (
+    return reduxArticles.map((a, index) => (
       <div
-        key={a.title}
+        key={index}
         className="article"
         style={{ backgroundImage: `url(${articleImg})` }}
       >

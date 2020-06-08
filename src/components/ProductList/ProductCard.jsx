@@ -32,7 +32,7 @@ const ProductCard = (props) => {
             className="taste-info"
           >
             {tasting_notes &&
-              tasting_notes.map((note) => <div key={note}>{note}</div>)}
+              tasting_notes.map((note, index) => <div key={index}>{note}</div>)}
           </div>
         </div>
         <div className="line" style={{ background: `${color[region]}` }}></div>

@@ -29,7 +29,7 @@ const ProductList = () => {
   ));
 
   const renderAllProducts = () => {
-    return reduxProducts.map((p) => <ProductCard key={p.title} {...p} />);
+    return reduxProducts.map((p, index) => <ProductCard key={index} {...p} />);
   };
 
   const renderProductsByRegion = Object.entries(groupByRegion).map(
@@ -38,8 +38,8 @@ const ProductList = () => {
         <div key={key}>
           {key === filter && (
             <div className="products">
-              {value.map((v) => (
-                <ProductCard key={v.title} {...v} />
+              {value.map((v, index) => (
+                <ProductCard key={index} {...v} />
               ))}
             </div>
           )}
