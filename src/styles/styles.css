@@ -235,6 +235,9 @@
 }
 
 .cart-container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 90em;
   -webkit-transition: all 0.10s ease-out;
   transition: all 0.10s ease-out;
   background: #e6e6e6;
@@ -255,6 +258,7 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  width: 30%;
   height: 100vh;
   overflow: hidden;
 }
@@ -276,6 +280,7 @@
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   padding: 5px 40px;
+  width: 500px;
 }
 
 .cart-container .name {

@@ -1,17 +1,16 @@
 .cart-container {
-  // @include container;
+  @include container;
   @include easeOut;
   background: $gray;
   text-align: center;
   position: fixed;
   top: 0;
   right: 0;
-  // opacity: 1;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   justify-content: flex-start;
-  // width: 30%;
+  width: 30%;
   height: 100vh;
   overflow: hidden;
 
@@ -34,7 +33,7 @@
       "purchase purchase purchase";
     grid-template-columns: repeat(3, 1fr);
     padding: 5px 40px;
-    // width: 500px;
+    width: 500px;
   }
 
   .name {
@@ -81,8 +80,8 @@
 }
 
 .cart-icon {
-  position: absolute; //always on top
-  z-index: 3; //close to the front
+  position: absolute;
+  z-index: 3; 
   right: 35px;
   top: 35px;
   cursor: pointer;
@@ -98,7 +97,7 @@
   width: 20px;
   height: 20px;
   text-align: center;
-  color: white;
+  color: $text-color;
   font-size: 0.8rem;
   font-weight: bold;
 }

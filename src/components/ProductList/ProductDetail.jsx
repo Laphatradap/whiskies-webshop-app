@@ -8,7 +8,6 @@ import ProductCard from "./ProductCard";
 const ProductDetail = (props) => {
   const dispatch = useDispatch();
   const productData = useSelector(getProductByTitle(props.match.params.title));
-  console.log("OUTPUT: ProductDetail -> productData", productData)
 
   if (!productData) return "Loading...";
 

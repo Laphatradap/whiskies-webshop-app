@@ -11,7 +11,7 @@
     display: inline-block;
     width: 100%;
     border: none;
-    color: white;
+    color: $text-color;
     padding: 14px 28px;
     font-size: 16px;
     border-radius: 9px;
@@ -21,7 +21,7 @@
   }
 
   .back-btn {
-    color: darken($gray, $amount: 30);
+    color: darken($gray, 30);
     cursor: pointer;
   }
 }

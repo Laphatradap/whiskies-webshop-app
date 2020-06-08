@@ -12,7 +12,6 @@ import { formatCurrency } from "../../util";
 const Cart = () => {
   const itemsInCart = useSelector(getItemsInCart);
   const amountItemsInCart = useSelector(amountOfItemsInCart);
-  console.log("OUTPUT: Cart -> amountItemsInCart", amountItemsInCart);
   const totalCost = useSelector(calculateTotal);
   const [open, isOpen] = useState(false);
 
