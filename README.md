@@ -1,68 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Whiskies Webshop App
 
-## Available Scripts
+### [Check out the deployed version here!](https://react-webshop-app.netlify.app/)
 
-In the project directory, you can run:
+### Installation
 
-### `yarn start`
+- `git clone git@github.com:Laphatradap/whiskies-webshop-app.git`
+- `cd whiskies-webshop-app`
+- `npm install`
+- `npm run start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Technologies used
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- [React Hooks](./src/components/ProductList/index.jsx)
+- [Redux-Thunk](./src/store/products/actions.js)
+- [Sass](./src/styles/_ProductList.scss)
+- [Axios](./src/store/articles/actions.js)
 
-### `yarn test`
+### Features implemented
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- A Homepage that contains a collection of popular whiskies, controls to filter these whiskies by their region, and an article that relates to this collection.
+- Each region has a pair of colors associated with it.
+- The article links — in a new tab — to the website where the article was originally published.
+- Each item links to its own page, where it can be added to cart.
 
-### `yarn build`
+### Styling with Sass
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Desktop-first approach](./src/styles/_Article.scss)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Screenshots
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Homepage](./src/assets/screenshots/react-webshop-app.png)
+![DetailPage](./src/assets/screenshots/app-detailpage-cart1.png)
 
-### `yarn eject`
+### Git usage
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [git branches and commit messages](https://github.com/Laphatradap/whiskies-webshop-app/commits/master)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Create React App
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+**Any feedback to improve my code or git usage: [please drop me a message](https://www.linkedin.com/in/laphatradaphusri/)!**
