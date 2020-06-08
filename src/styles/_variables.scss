@@ -28,6 +28,19 @@ $campbeltown: linear-gradient(to right, #F3B41B, #D29D2A);
 
 ;
 
+$asset-base-path: '../assets';
+
+@function asset($type, $file) {
+  @return url($asset-base-path + '/' + $file);
+}
+
+;
+
+@function image($file) {
+  @return asset('images', $file);
+}
+
+;
 
 .title {
   text-transform: uppercase;

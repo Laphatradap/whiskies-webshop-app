@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../store/products/actions";
-import { getAllProducts } from "../../store/products/selectors";
+import { getAllProducts, groupProductByRegion } from "../../store/products/selectors";
 import ProductCard from "./ProductCard";
 
 const ProductList = () => {
   const dispatch = useDispatch();
   const reduxProducts = useSelector(getAllProducts);
+  const groupByRegion = useSelector(groupProductByRegion)
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
@@ -14,11 +15,6 @@ const ProductList = () => {
   }, [dispatch]);
 
   if (!reduxProducts) return "Loading...";
-
-  const groupByRegion = reduxProducts.reduce((r, a) => {
-    r[a.region] = [...(r[a.region] || []), a];
-    return r;
-  }, {});
 
   let regions = Object.entries(groupByRegion).map(([key]) => {
     return key;

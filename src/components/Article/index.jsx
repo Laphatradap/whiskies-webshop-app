@@ -14,11 +14,12 @@ const ArticleContainer = () => {
   const renderArticles = () => {
     return reduxArticles.map((a) => (
       <div
+        key={a.title}
         className="article"
         style={{ backgroundImage: `url(${articleImg})` }}
       >
         <a href={a.url}>
-          <div className="overlay" key={a.title}>
+          <div className="overlay">
             <div className="article-text">
               <div className="title">{a.title}</div>
               <div className="description">{a.teaser}</div>

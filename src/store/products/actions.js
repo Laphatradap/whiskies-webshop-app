@@ -16,15 +16,3 @@ export const fetchProducts = () => async (dispatch) => {
   }
 };
 
-// export const filterProducts = (products, region) => (dispatch) => {
-//   dispatch({
-//     type: "PRODUCTS_FILTERED",
-//     payload: {
-//       region: region,
-//       items:
-//         region === ""
-//           ? products
-//           : products.filter((product) => product.region === region),
-//     },
-//   });
-// };
