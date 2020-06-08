@@ -20,7 +20,7 @@ $campbeltown: linear-gradient(to right, #F3B41B, #D29D2A);
 
 ;
 
-@mixin container($width: 100%, $max-width: 90em) {
+@mixin container($width: 90%, $max-width: 90em) {
   width: $width;
   margin: 0 auto;
   max-width: $max-width;
@@ -42,12 +42,32 @@ $asset-base-path: '../assets';
 
 ;
 
-.title {
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 3rem;
-  font-style: italic;
-  padding: 30px;
-  letter-spacing: -0.3rem;
-  font-weight: 500;
+
+@mixin easeOut {
+  transition: all 0.10s ease-out; //fade in for all transitionble item
+}
+
+// Media Query Mixins
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
 }

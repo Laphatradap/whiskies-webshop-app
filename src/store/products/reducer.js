@@ -1,4 +1,4 @@
-const initialState = [];
+const initialState = {list: []};
 
 export default function productReducer(state = initialState, action) {
   switch (action.type) {

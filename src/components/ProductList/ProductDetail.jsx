@@ -8,17 +8,18 @@ import ProductCard from "./ProductCard";
 const ProductDetail = (props) => {
   const dispatch = useDispatch();
   const productData = useSelector(getProductByTitle(props.match.params.title));
+  console.log("OUTPUT: ProductDetail -> productData", productData)
 
   if (!productData) return "Loading...";
 
-  function onAddClick(product) {
+  const onAddClick = (product) => {
     dispatch(addToCart(product));
-  }
+  };
 
   return (
     <div>
       <div className="product-container">
-        <div className="title">Whiskey Selection</div>
+        <div className="title">{productData.title}</div>
       </div>
 
       <div className="products">

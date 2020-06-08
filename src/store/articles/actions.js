@@ -7,11 +7,14 @@ export const articlesFetched = (articles) => {
   };
 };
 
-export const fetchArticles = () => async (dispatch) => {
-  try {
-    const response = await axios.get("../../data/articles.json");
-    dispatch(articlesFetched(response.data));
-  } catch (error) {
-    console.log(error);
+export const fetchArticles = () => async (dispatch, getState) => {
+  const articles = getState().articles;
+  if (!articles.length) {
+    try {
+      const response = await axios.get("../../data/articles.json");
+      dispatch(articlesFetched(response.data));
+    } catch (error) {
+      console.log(error);
+    }
   }
 };

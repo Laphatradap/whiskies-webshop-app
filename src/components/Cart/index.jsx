@@ -1,43 +1,86 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import {
   amountOfItemsInCart,
   getItemsInCart,
   calculateTotal,
 } from "../../store/cart/selectors";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { formatCurrency } from "../../util";
-import { useHistory } from "react-router-dom";
 
 const Cart = () => {
   const itemsInCart = useSelector(getItemsInCart);
   const amountItemsInCart = useSelector(amountOfItemsInCart);
+  console.log("OUTPUT: Cart -> amountItemsInCart", amountItemsInCart);
   const totalCost = useSelector(calculateTotal);
-  const history = useHistory();
+  const [open, isOpen] = useState(false);
 
   const renderItemsInCart = (items) => {
-    return items.map((item) => (
-      <div key={item.title}>
-        <div>{item.title}</div>
-        <div>{formatCurrency(item.cost)}</div>
-        <div>Amount: {item.quantity}</div>
+    return items.map((item, index) => (
+      <div key={index} className="cart-info">
+        <div className="item-title">{item.title}</div>
+        <div className="item-cost">{formatCurrency(item.cost)}</div>
+        <div className="item-quantity">{item.quantity}</div>
       </div>
     ));
   };
 
+  const handleCartClick = () => {
+    isOpen(!open);
+  };
+
   return (
     <div>
-      <div onClick={() => history.push(`/`)}>back</div>
+      <div className="cart-icon">
+        <FontAwesomeIcon
+          icon={faShoppingCart}
+          size="2x"
+          onClick={() => {
+            handleCartClick();
+          }}
+        />
+        {amountItemsInCart !== 0 && (
+          <div className="badge">{amountItemsInCart}</div>
+        )}
+      </div>
       <div>
-        {itemsInCart.length === 0 ? (
-          <div>Your cart is empty</div>
-        ) : (
-          <>
-            <div>Your Cart</div>
-            <div>{renderItemsInCart(itemsInCart)}</div>
-            <div>Total cost:{formatCurrency(totalCost)} </div>
-            <div>Total quantity: {amountItemsInCart}</div>
-            <button>Purchase</button>
-          </>
+        {open && (
+          <div className="cart-container">
+            <div>
+              {!itemsInCart.length ? (
+                <div className="cart">Your cart is empty</div>
+              ) : (
+                <>
+                  <div>
+                    <div className="cart">Your Cart</div>
+                    <div className="cart-info">
+                      <span className="name">Item</span>
+                      <span className="cost">Price</span>
+                      <span className="quantity">Quantity</span>
+                    </div>
+                    <div>{renderItemsInCart(itemsInCart)}</div>
+                    <div className="cart-info">
+                      <div className="total-items">
+                        Total ({amountItemsInCart} items)
+                      </div>
+                      <div className="total-cost">
+                        {formatCurrency(totalCost)}
+                      </div>
+                      <button
+                        onClick={() => {
+                          window.alert("The feature is coming soon!");
+                        }}
+                        className="purchase-btn"
+                      >
+                        Purchase
+                      </button>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
         )}
       </div>
     </div>

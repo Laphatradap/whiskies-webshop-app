@@ -2,10 +2,28 @@
   @include container;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   justify-items: center;
   align-items: center;
   padding: 20px;
+
+  button {
+    display: inline-block;
+    width: 100%;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 9px;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .back-btn {
+    color: darken($gray, $amount: 30);
+    cursor: pointer;
+  }
 }
 
 .line {
@@ -30,6 +48,10 @@
   position: relative;
   width: 400px;
   align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .product-title {

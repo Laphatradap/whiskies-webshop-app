@@ -1,109 +1,104 @@
-.cart-row {
-  @include container;
+.cart-container {
+  // @include container;
+  @include easeOut;
+  background: $gray;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  // opacity: 1;
   display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: flex-start;
+  // width: 30%;
+  height: 100vh;
+  overflow: hidden;
 
-  &::last-child {
-    border-bottom: 1px solid black;
-  }
-
-  &::last-child .cart-column {
-    border: none;
-  }
-
-  .cart-header {
+  .cart {
+    display: inline-block;
+    font-size: 1.5rem;
+    text-transform: capitalize;
     font-weight: bold;
-    font-size: 1.25em;
-    color: #333;
+    margin-top: 90px;
+    padding: 10px;
   }
 
-  .cart-column {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid black;
-    margin-right: 1.5em;
-    padding-bottom: 10px;
-    margin-top: 10px;
+  .cart-info {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-areas:
+      "name cost quantity"
+      "itemTitle  itemCost itemQuantity"
+      "totalitems . totalcost"
+      "purchase purchase purchase";
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5px 40px;
+    // width: 500px;
   }
 
-  .cart-row {
-    display: flex;
-  }
-
-  .cart-item {
-    width: 45%;
-  }
-
-  .cart-price {
-    width: 20%;
-    font-size: 1.2em;
-    color: #333;
-  }
-
-  .cart-quantity {
-    width: 35%;
-  }
-
-  .cart-item-title {
-    color: #333;
-    margin-left: .5em;
-    font-size: 1.2em;
-  }
-
-  .cart-item-image {
-    width: 75px;
-    height: auto;
-    border-radius: 10px;
-  }
-
-
-  .cart-quantity-input {
-    height: 34px;
-    width: 50px;
-    border-radius: 5px;
-    border: 1px solid #56CCF2;
-    background-color: #eee;
-    color: #333;
-    padding: 0;
-    text-align: center;
-    font-size: 1.2em;
-    margin-right: 25px;
-  }
-
-
-
-  .cart-total {
-    text-align: end;
-    margin-top: 10px;
-    margin-right: 10px;
-  }
-
-  .cart-total-title {
+  .name {
+    grid-area: name;
     font-weight: bold;
-    font-size: 1.5em;
-    color: black;
-    margin-right: 20px;
   }
 
-  .cart-total-price {
-    color: #333;
-    font-size: 1.1em;
+  .cost {
+    grid-area: cost;
+    font-weight: bold;
+  }
+
+  .quantity {
+    grid-area: quantity;
+    font-weight: bold;
+  }
+
+  .item-title {
+    grid-area: itemTitle;
+    text-transform: capitalize;
+  }
+
+  .item-cost {
+    grid-area: itemCost;
+  }
+
+  .item-quantity {
+    grid-area: itemQuantity;
+  }
+
+  .total-items {
+    grid-area: totalitems;
+  }
+
+  .total-cost {
+    grid-area: totalcost;
+  }
+
+  .purchase-btn {
+    grid-area: purchase;
+    background: $background-color;
+    margin-top: 20px;
   }
 }
 
-.btn-primary {
+.cart-icon {
+  position: absolute; //always on top
+  z-index: 3; //close to the front
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeOut;
+}
+
+.badge {
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
   color: white;
-  background-color: #56CCF2;
-  border: none;
-  border-radius: .3em;
+  font-size: 0.8rem;
   font-weight: bold;
-}
-
-.btn-primary:hover {
-  background-color: #2D9CDB;
-}
-
-.btn-purchase {
-  display: block;
-  margin: 40px auto 80px auto;
-  font-size: 1.75em;
 }

@@ -1,4 +1,4 @@
-@import "./variables";
+@import "./config";
 @import "./ProductList";
 @import "./Article";
 @import "./Filter";
@@ -13,7 +13,33 @@
 body {
   font-family: "Cabin", sans-serif;
   line-height: 1.5;
-  margin: 0;
   font-size: 1rem;
-  overflow-x: hidden;
+  flex-wrap: wrap;
+  width: auto !important;
+  overflow-x: hidden !important;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 9px;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3rem;
+  font-style: italic;
+  padding: 30px;
+  letter-spacing: -0.3rem;
+  font-weight: 500;
 }
