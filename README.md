@@ -4,7 +4,7 @@
 
 ### Installation
 
-- `git clone git@github.com:Laphatradap/whiskies-webshop-app.git`
+- `git clone https://github.com/Laphatradap/whiskies-webshop-app.git`
 - `cd whiskies-webshop-app`
 - `npm install`
 - `npm run start`
