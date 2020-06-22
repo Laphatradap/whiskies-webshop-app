@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 import {
   amountOfItemsInCart,
   getItemsInCart,
@@ -14,6 +16,7 @@ const Cart = () => {
   const amountItemsInCart = useSelector(amountOfItemsInCart);
   const totalCost = useSelector(calculateTotal);
   const [open, isOpen] = useState(false);
+  const history = useHistory();
 
   const renderItemsInCart = (items) => {
     return items.map((item, index) => (
@@ -68,7 +71,7 @@ const Cart = () => {
                       </div>
                       <button
                         onClick={() => {
-                          window.alert("The feature is coming soon!");
+                          history.push("/payment");
                         }}
                         className="purchase-btn"
                       >
@@ -76,6 +79,10 @@ const Cart = () => {
                       </button>
                     </div>
                   </div>
+                  {/* <CheckoutForm
+                    items={itemsInCart}
+                    onSuccessfulCheckout={() => history.push("/success")}
+                  /> */}
                 </>
               )}
             </div>
