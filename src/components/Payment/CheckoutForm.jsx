@@ -80,13 +80,21 @@ export default function CheckoutForm() {
     }
   };
 
+  const cardElementOpts = {
+    iconStyle: "solid",
+    hidePostalCode: true,
+  };
+
   return (
     <form
       onSubmit={handleSubmit}
       style={{ maxWidth: "400px", margin: "0 auto" }}
     >
       {/* <BillingDetailsFields /> */}
-      <CardSection handleChange={handleCardDetailsChange} />
+      <CardSection
+        options={cardElementOpts}
+        handleChange={handleCardDetailsChange}
+      />
       {checkoutError && <div>{checkoutError}</div>}
       <button
         disabled={isProcessing || !stripe}
