@@ -8,9 +8,9 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./components/Payment/CheckoutForm";
 import keys from "./config/keys";
+console.log("OUTPUT: keys", keys);
 
 const stripePromise = loadStripe(keys.stripePublishableKey);
-
 
 function App() {
   return (
