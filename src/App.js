@@ -8,11 +8,13 @@ import ProductDetail from "./components/ProductList/ProductDetail";
 import CheckoutForm from "./components/Payment/CheckoutForm";
 import PaymentSuccess from "./components/Payment/PaymentSuccess";
 import Homepage from "./components/Homepage";
-require('dotenv').config()
 
-console.log(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY)
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+console.log(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
-console.log("OUTPUT: stripePromise", stripePromise)
+console.log("OUTPUT: stripePromise", stripePromise);
 
 function App() {
   return (
