@@ -4,12 +4,14 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import "./styles/styles.css";
 
-import Homepage from "./components/Homepage";
 import ProductDetail from "./components/ProductList/ProductDetail";
-import PaymentSuccess from "./components/Payment/PaymentSuccess";
 import CheckoutForm from "./components/Payment/CheckoutForm";
+import PaymentSuccess from "./components/Payment/PaymentSuccess";
+import Homepage from "./components/Homepage";
 
+console.log(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY)
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+console.log("OUTPUT: stripePromise", stripePromise)
 
 function App() {
   return (
