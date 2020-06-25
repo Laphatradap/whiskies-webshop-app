@@ -1,6 +1,6 @@
 ## Whiskies Webshop App
 
-### [Check out the deployed version here!](https://whiskies-webshop.netlify.app/)
+### [Check out the deployed version here!](https://whiskies-webshop-client.herokuapp.com/)
 
 ### Installation
 

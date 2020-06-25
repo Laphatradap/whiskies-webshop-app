@@ -11,6 +11,7 @@ import keys from "./config/keys";
 console.log("OUTPUT: keys", keys);
 
 const stripePromise = loadStripe(keys.stripePublishableKey);
+console.log("OUTPUT: stripePromise", stripePromise)
 
 function App() {
   return (
