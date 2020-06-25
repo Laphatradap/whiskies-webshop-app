@@ -9,21 +9,16 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./components/Payment/CheckoutForm";
 import keys from "./config/keys";
 console.log("OUTPUT: keys", keys);
+console.log("env", process.env);
 
-let stripePromise;
-const getStripe = () => {
-  if (!stripePromise) {
-    stripePromise = loadStripe(keys.stripePublishableKey);
-  }
-  return stripePromise;
-};
-
-console.log("OUTPUT: stripePromise", stripePromise);
+const stripePromise = loadStripe(
+  "pk_test_51Gv0EgEpz8q3eYR4W8D2icEyYlOE4PcgKHm2p3cIufp8O5QWpWo5HLzOBHmebHsf6RLJKpWFuqFIuaio6tGUWGAO00UZgtDM4W"
+);
 
 function App() {
   return (
     <div className="App">
-      <Elements stripe={getStripe()}>
+      <Elements stripe={stripePromise}>
         <Switch>
           <Route path="/product/:title" component={ProductDetail} />
           <Route path="/payment" component={CheckoutForm} />
