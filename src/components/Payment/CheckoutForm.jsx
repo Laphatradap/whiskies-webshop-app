@@ -50,7 +50,6 @@ export default function CheckoutForm() {
       const { data: clientSecret } = await axios.post(`${databaseUrl}/pay`, {
         amount: totalCost * 100,
       });
-      console.log("OUTPUT: handleSubmit -> clientSecret", clientSecret);
 
       const paymentMethodReq = await stripe.createPaymentMethod({
         type: "card",

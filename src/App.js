@@ -12,9 +12,7 @@ import Homepage from "./components/Homepage";
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
-console.log(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
-console.log("OUTPUT: stripePromise", stripePromise);
 
 function App() {
   return (
