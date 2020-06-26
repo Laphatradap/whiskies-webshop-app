@@ -1,0 +1,18 @@
+.payment-success-container {
+  @include container;
+  width: 475px;
+  margin: 30px auto 0 auto;
+  text-align: center;
+}
+
+
+.back-to-home {
+  margin-top: 40px;
+  color: #D71E44;
+  text-decoration: underline;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+}

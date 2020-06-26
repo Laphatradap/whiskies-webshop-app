@@ -240,7 +240,7 @@
   max-width: 90em;
   -webkit-transition: all 0.10s ease-out;
   transition: all 0.10s ease-out;
-  background: #e6e6e6;
+  border: 3px solid #e6e6e6;
   text-align: center;
   position: fixed;
   top: 0;
@@ -368,6 +368,93 @@
   font-weight: bold;
 }
 
+.checkout-container .form-field-container {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-left: 15px;
+}
+
+.checkout-container .form-field-container:first-of-type {
+  border-top: none;
+}
+
+label {
+  min-width: 70px;
+  padding: 11px 0;
+  color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+input {
+  margin: 5px;
+  width: 100%;
+  padding: 11px 15px 11px 8px;
+}
+
+.checkout-error-message {
+  color: #fa755a;
+}
+
+.payment-btn {
+  background: #333333;
+  margin-top: 15px;
+}
+
+.StripeElement {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 3px 0 #e6ebf1;
+          box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  -webkit-transition: -webkit-box-shadow 150ms ease;
+  transition: -webkit-box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease, -webkit-box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  -webkit-box-shadow: 0 1px 3px 0 #cfd7df;
+          box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.payment-success-container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 90em;
+  width: 475px;
+  margin: 30px auto 0 auto;
+  text-align: center;
+}
+
+.back-to-home {
+  margin-top: 40px;
+  color: #D71E44;
+  text-decoration: underline;
+}
+
+.back-to-home:hover {
+  cursor: pointer;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -408,5 +495,13 @@ button {
   padding: 30px;
   letter-spacing: -0.3rem;
   font-weight: 500;
+}
+
+.subtitle {
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 1rem;
+  padding-bottom: 20px;
+  font-weight: 700;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -4,6 +4,8 @@ import FormField from "./FormField";
 const BillingDetailsFields = () => {
   return (
     <>
+      <div className="subtitle">Billing details</div>
+
       <FormField
         name="name"
         label="Name"

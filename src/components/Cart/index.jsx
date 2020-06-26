@@ -79,10 +79,6 @@ const Cart = () => {
                       </button>
                     </div>
                   </div>
-                  {/* <CheckoutForm
-                    items={itemsInCart}
-                    onSuccessfulCheckout={() => history.push("/success")}
-                  /> */}
                 </>
               )}
             </div>

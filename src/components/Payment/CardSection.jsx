@@ -3,6 +3,7 @@ import { CardElement } from "@stripe/react-stripe-js";
 
 const CardSection = (props) => {
   const { handleChange } = props;
+
   const CARD_ELEMENT_OPTIONS = {
     style: {
       base: {
@@ -16,16 +17,14 @@ const CardSection = (props) => {
       },
       invalid: {
         color: "#fa755a",
-        iconColor: "#fa755a",
       },
     },
   };
+
   return (
     <div>
-      <label>
-        Card details
-        <CardElement options={CARD_ELEMENT_OPTIONS} onChange={handleChange} />
-      </label>
+      <div className="subtitle">Card details</div>
+      <CardElement options={CARD_ELEMENT_OPTIONS} onChange={handleChange} />
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { calculateTotal } from "../../store/cart/selectors";
 import { databaseUrl } from "../../constants";
 import CardSection from "./CardSection";
-// import BillingDetailsFields from "./BillingDetailsFields";
+import BillingDetailsFields from "./BillingDetailsFields";
 
 export default function CheckoutForm() {
   const [isProcessing, setProcessingTo] = useState(false);
@@ -27,16 +27,16 @@ export default function CheckoutForm() {
       return;
     }
 
-    // const billingDetails = {
-    //   name: ev.target.name.value,
-    //   email: ev.target.email.value,
-    //   address: {
-    //     city: ev.target.city.value,
-    //     line1: ev.target.address.value,
-    //     state: ev.target.state.value,
-    //     postal_code: ev.target.zip.value,
-    //   },
-    // };
+    const billingDetails = {
+      name: ev.target.name.value,
+      email: ev.target.email.value,
+      address: {
+        city: ev.target.city.value,
+        line1: ev.target.address.value,
+        state: ev.target.state.value,
+        postal_code: ev.target.zip.value,
+      },
+    };
 
     setProcessingTo(true);
 
@@ -54,7 +54,7 @@ export default function CheckoutForm() {
       const paymentMethodReq = await stripe.createPaymentMethod({
         type: "card",
         card: cardElement,
-        // billing_details: billingDetails,
+        billing_details: billingDetails,
       });
 
       if (paymentMethodReq.error) {
@@ -85,23 +85,25 @@ export default function CheckoutForm() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ maxWidth: "400px", margin: "0 auto" }}
-    >
-      {/* <BillingDetailsFields /> */}
-      <CardSection
-        options={cardElementOpts}
-        handleChange={handleCardDetailsChange}
-      />
-      {checkoutError && <div>{checkoutError}</div>}
-      <button
-        disabled={isProcessing || !stripe}
-        style={{ backgroundColor: "black" }}
+    <div className="checkout-container">
+      <div className="title">Pay with Card</div>
+      <form
+        onSubmit={handleSubmit}
+        style={{ maxWidth: "400px", margin: "0 auto" }}
       >
-        {" "}
-        {isProcessing ? "Processing..." : `Pay $${totalCost}`}
-      </button>
-    </form>
+        <BillingDetailsFields />
+        <CardSection
+          options={cardElementOpts}
+          handleChange={handleCardDetailsChange}
+        />
+        {checkoutError && (
+          <div className="checkout-error-message">{checkoutError}</div>
+        )}
+        <button className="payment-btn" disabled={isProcessing || !stripe}>
+          {" "}
+          {isProcessing ? "Processing..." : `Pay $${totalCost}`}
+        </button>
+      </form>
+    </div>
   );
 }

@@ -4,6 +4,7 @@
 @import "./Filter";
 @import "./Cart";
 @import "./CheckoutForm";
+@import "./PaymentSuccess";
 
 * {
   box-sizing: border-box;
@@ -43,4 +44,14 @@ button {
   padding: 30px;
   letter-spacing: -0.3rem;
   font-weight: 500;
+
+}
+
+
+.subtitle {
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 1rem;
+  padding-bottom: 20px;
+  font-weight: 700;
 }

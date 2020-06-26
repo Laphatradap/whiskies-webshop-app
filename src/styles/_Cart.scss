@@ -1,7 +1,8 @@
 .cart-container {
   @include container;
   @include easeOut;
-  background: $gray;
+  // background: $gray;
+  border: 3px solid $gray;
   text-align: center;
   position: fixed;
   top: 0;
@@ -81,7 +82,7 @@
 
 .cart-icon {
   position: absolute;
-  z-index: 3; 
+  z-index: 3;
   right: 35px;
   top: 35px;
   cursor: pointer;

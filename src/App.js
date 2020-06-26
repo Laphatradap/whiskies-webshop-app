@@ -9,10 +9,11 @@ import CheckoutForm from "./components/Payment/CheckoutForm";
 import PaymentSuccess from "./components/Payment/PaymentSuccess";
 import Homepage from "./components/Homepage";
 
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
+// if (process.env.NODE_ENV !== "production") {
+//   require("dotenv").config();
+// }
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+console.log("OUTPUT: stripePromise", stripePromise)
 
 function App() {
   return (

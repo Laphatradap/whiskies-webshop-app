@@ -1,5 +1,85 @@
-#card-element {
-  background: black;
+.checkout-container {
+
+  // .title {
+  //   font-size: 2.5rem;
+  // }
+
+
+  .form-field-container {
+    // background: rgb(183, 183, 189);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 15px;
+    // border-top: 1px solid #819efc;
+
+    &:first-of-type {
+      border-top: none;
+    }
+  }
 }
 
-;
+
+label {
+  // background: blue;
+  // width: 20%;
+  min-width: 70px;
+  padding: 11px 0;
+  color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  // border-right: 1px solid #819efc;
+}
+
+input {
+  margin: 5px;
+  // font-size: 16px;
+  width: 100%;
+  padding: 11px 15px 11px 8px;
+  // color: black;
+  // background-color: transparent;
+  // animation: 1ms void-animation-out;
+
+  // &::placeholder {
+  //   color: black;
+  // }
+}
+
+.checkout-error-message {
+  color: #fa755a;
+}
+
+.payment-btn {
+  background: $background-color;
+  margin-top: 15px;
+}
+
+.StripeElement {
+  box-sizing: border-box;
+
+  height: 40px;
+
+  padding: 10px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
