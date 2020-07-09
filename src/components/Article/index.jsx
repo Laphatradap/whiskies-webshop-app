@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchArticles } from "../../store/articles/actions";
 import { getArticles } from "../../store/articles/selectors";
-import articleImg from "../../assets/whiskey-glass.jpg";
 
 const ArticleContainer = () => {
   const dispatch = useDispatch();
@@ -13,24 +12,20 @@ const ArticleContainer = () => {
 
   const renderArticles = () => {
     return reduxArticles.map((a, index) => (
-      <div
-        key={index}
-        className="article"
-        style={{ backgroundImage: `url(${articleImg})` }}
-      >
-        <a href={a.url}>
-          <div className="overlay">
-            <div className="article-text">
-              <div className="title">{a.title}</div>
-              <div className="description">{a.teaser}</div>
-            </div>
-          </div>
-        </a>
+      <div className="article">
+        <div
+          key={index}
+          className="article__text-box"
+          // onClick={() => window.open(a.url)}
+        >
+          <div className="heading-primary heading-primary--main">{a.title}</div>
+          <div className="paragraph paragraph--main">{a.teaser}</div>
+        </div>
       </div>
     ));
   };
   return (
-    <div className="article-container">
+    <div className="section-article">
       {!reduxArticles ? <p>Loading...</p> : renderArticles()}
     </div>
   );

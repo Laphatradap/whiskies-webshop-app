@@ -19,7 +19,7 @@ export default () => {
     <div>
       <div className="payment-success-container">
         <Confetti width={width} height={height} numberOfPieces={450} />
-        <div className="title">congrats!</div>
+        <div className="heading-primary">congrats!</div>
         <div className="message">
           Stripe has successfully processed your payment
         </div>

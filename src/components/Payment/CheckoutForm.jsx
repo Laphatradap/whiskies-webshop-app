@@ -86,7 +86,7 @@ export default function CheckoutForm() {
 
   return (
     <div className="checkout-container">
-      <div className="title">Pay with Card</div>
+      <div className="heading-primary">Pay with Card</div>
       <form
         onSubmit={handleSubmit}
         style={{ maxWidth: "400px", margin: "0 auto" }}

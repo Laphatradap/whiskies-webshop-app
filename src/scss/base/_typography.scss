@@ -1,0 +1,46 @@
+body {
+  font-family: "Cabin", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: $color-black;
+}
+
+.heading-primary {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 5rem;
+  font-style: italic;
+  // padding: 30px 0;
+  letter-spacing: -0.5rem;
+  font-weight: 400;
+  font-stretch: ultra-condensed;
+
+
+
+  &--main {
+    word-break: break-word;
+    text-align: initial;
+    line-height: 1;
+
+    // background: pink;
+  }
+}
+
+.heading-secondary {
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 1rem;
+  // padding-bottom: 20px;
+  font-weight: 700;
+}
+
+.paragraph {
+  font-size: 1.4rem;
+
+  &--main {
+    font-weight: 500;
+    word-break: break-word;
+    line-height: 1.5;
+    text-align: initial;
+  }
+}

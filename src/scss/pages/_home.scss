@@ -1,0 +1,50 @@
+.section-article {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+}
+
+
+.article {
+  height: 80vh;
+  background-image: linear-gradient(to right bottom,
+      rgba($color-black-light-1, 0.7),
+      rgba($color-black-light-1, 0.7)),
+    url(../assets/whiskey-glass_small.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: .8rem;
+
+  flex: 0 0 90%;
+  display: flex;
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+  (min-width: 125em) {
+    //600px/16 and 2000px
+    background-image: linear-gradient(to right bottom,
+        rgba($color-black-light-1, 0.7),
+        rgba($color-black-light-1, 0.7)),
+      url(../assets/whiskey-glass.jpg);
+  }
+
+  @include respond(phone) {
+    height: 50vh;
+  }
+
+  &__text-box {
+    padding: 1rem;
+    margin: 7rem;
+
+    flex: 0 0 51%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: inherit;
+
+    &>* {
+      padding: .5rem;
+    }
+  }
+}

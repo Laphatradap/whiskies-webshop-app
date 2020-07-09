@@ -1,0 +1,25 @@
+.chip {
+  @include container;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding-bottom: 30px;
+
+  &--item {
+    border: 1px solid darken($color-grey, 10);
+    border-radius: 20px;
+    padding: 7px 15px;
+    margin: 5px;
+
+    &:hover {
+      background: $color-grey;
+      cursor: pointer;
+    }
+
+    &.current {
+      background: $color-grey;
+      border: 1px solid $color-grey;
+    }
+  }
+}

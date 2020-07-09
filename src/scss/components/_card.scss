@@ -11,7 +11,7 @@
     display: inline-block;
     width: 100%;
     border: none;
-    color: $text-color;
+    color: $color-white;
     padding: 14px 28px;
     font-size: 16px;
     border-radius: 9px;
@@ -21,7 +21,7 @@
   }
 
   .back-btn {
-    color: darken($gray, 30);
+    color: darken($color-grey, 30);
     cursor: pointer;
   }
 }
@@ -37,13 +37,13 @@
 .product-card {
   margin: 2px;
   margin-bottom: 50px;
-  background: $background-color;
+  background: $color-black-light-1;
   background-image: image("card-bg.svg");
   background-position: right bottom;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 9px;
-  color: $text-color;
+  color: $color-white;
   height: 544px;
   position: relative;
   width: 400px;
@@ -73,7 +73,7 @@
   font-size: 1rem;
   font-weight: 500;
   text-transform: capitalize;
-  color: $gray;
+  color: $color-grey;
   padding-bottom: 19px;
   position: absolute;
   left: 0;

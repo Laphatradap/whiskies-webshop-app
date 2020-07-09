@@ -1,8 +1,8 @@
 .cart-container {
   @include container;
   @include easeOut;
-  // background: $gray;
-  border: 3px solid $gray;
+  // background: $color-grey;
+  border: 3px solid $color-grey;
   text-align: center;
   position: fixed;
   top: 0;
@@ -75,7 +75,7 @@
 
   .purchase-btn {
     grid-area: purchase;
-    background: $background-color;
+    background: $color-black-light-1;
     margin-top: 20px;
   }
 }
@@ -98,7 +98,7 @@
   width: 20px;
   height: 20px;
   text-align: center;
-  color: $text-color;
+  color: $color-white;
   font-size: 0.8rem;
   font-weight: bold;
 }

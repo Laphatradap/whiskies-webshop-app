@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../store/products/actions";
-import { getAllProducts, groupProductByRegion } from "../../store/products/selectors";
+import {
+  getAllProducts,
+  groupProductByRegion,
+} from "../../store/products/selectors";
 import ProductCard from "./ProductCard";
 
 const ProductList = () => {
   const dispatch = useDispatch();
   const reduxProducts = useSelector(getAllProducts);
-  const groupByRegion = useSelector(groupProductByRegion)
+  const groupByRegion = useSelector(groupProductByRegion);
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
@@ -23,7 +26,11 @@ const ProductList = () => {
   const sortedFilter = regions.map((item) => item).sort();
 
   const renderFilter = sortedFilter.map((item) => (
-    <div className="filter" key={item} onClick={() => setFilter(item)}>
+    <div
+      className="paragraph chip--item"
+      key={item}
+      onClick={() => setFilter(item)}
+    >
       {item}
     </div>
   ));
@@ -51,8 +58,8 @@ const ProductList = () => {
   return (
     <div>
       <div className="product-container">
-        <div className="title">Whiskey Selection</div>
-        <div className="filter-container">{renderFilter}</div>
+        <div className="heading-primary">Whiskey Selection</div>
+        <div className="chip">{renderFilter}</div>
       </div>
       {filter === "all" ? (
         <div className="products">{renderAllProducts()}</div>

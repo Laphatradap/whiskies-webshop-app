@@ -1,5 +1,5 @@
 import React from "react";
-import color from "../../styles/_config.scss";
+import color from "../../scss/abstracts/_functions.scss";
 import { formatCurrency } from "../../util";
 import { useHistory } from "react-router-dom";
 

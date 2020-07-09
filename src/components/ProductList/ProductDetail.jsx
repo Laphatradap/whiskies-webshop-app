@@ -18,7 +18,7 @@ const ProductDetail = (props) => {
   return (
     <div>
       <div className="product-container">
-        <div className="title">{productData.title}</div>
+        <div className="heading-primary">{productData.title}</div>
       </div>
 
       <div className="products">

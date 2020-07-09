@@ -2,7 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import "./styles/styles.css";
+// import "./styles/styles.css";
+import "./scss/main.css";
 
 import ProductDetail from "./components/ProductList/ProductDetail";
 import CheckoutForm from "./components/Payment/CheckoutForm";
@@ -13,11 +14,11 @@ import Homepage from "./components/Homepage";
 //   require("dotenv").config();
 // }
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
-console.log("OUTPUT: stripePromise", stripePromise)
+console.log("OUTPUT: stripePromise", stripePromise);
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Elements stripe={stripePromise}>
         <Switch>
           <Route path="/product/:title" component={ProductDetail} />
