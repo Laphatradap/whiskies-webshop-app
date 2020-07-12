@@ -18,7 +18,7 @@ console.log("OUTPUT: stripePromise", stripePromise);
 
 function App() {
   return (
-    <div className="container">
+    <div className="App">
       <Elements stripe={stripePromise}>
         <Switch>
           <Route path="/product/:title" component={ProductDetail} />

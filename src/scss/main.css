@@ -81,14 +81,20 @@ body {
 }
 
 .heading-secondary {
-  padding: 10px 10px;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 2.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.heading-tertiary {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: capitalize;
 }
 
 .paragraph {
   font-size: 1.4rem;
+  text-transform: capitalize;
 }
 
 .paragraph--main {
@@ -111,128 +117,93 @@ button {
   text-transform: uppercase;
 }
 
-.products {
-  width: 90%;
-  margin: 0 auto;
-  max-width: 90em;
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 20px;
-  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 20px;
+.product__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem;
+  height: 55rem;
+  position: relative;
 }
 
-.products button {
-  display: inline-block;
-  width: 100%;
-  border: none;
-  color: #ffffff;
-  padding: 14px 28px;
-  font-size: 16px;
-  border-radius: 9px;
-  cursor: pointer;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.products .back-btn {
-  color: #9a9a9a;
+.product__card:hover {
   cursor: pointer;
 }
 
-.line {
-  height: 4px;
-  width: 50px;
-  position: absolute;
-  right: 0;
-  top: 50px;
-}
-
-.product-card {
-  margin: 2px;
-  margin-bottom: 50px;
+.product-info {
   background: #333;
   background-image: url("../assets/card-bg.svg");
   background-position: right bottom;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 9px;
+  border-radius: 4px;
   color: #ffffff;
-  height: 544px;
-  position: relative;
-  width: 400px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 90%;
+          flex: 0 0 90%;
+  height: 50rem;
 }
 
-.product-card:hover {
-  cursor: pointer;
-}
-
-.product-title {
+.product-info > * {
   position: absolute;
-  left: 0;
-  top: 280px;
-  padding-left: 36px;
-  font-size: 1.7rem;
-  font-weight: 600;
-  text-transform: capitalize;
-  padding-bottom: 5px;
+  padding: 0 3.6rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
-.product-title.price {
-  top: 370px;
+.product-info__name {
+  bottom: 23rem;
 }
 
-.product-region {
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: capitalize;
-  color: #e6e6e6;
-  padding-bottom: 19px;
-  position: absolute;
-  left: 0;
-  top: 320px;
-  padding-left: 36px;
+.product-info__region {
+  bottom: 21rem;
+  color: #8c8c8c;
 }
 
-.taste-info {
-  position: absolute;
-  left: -20px;
-  bottom: 36px;
-  height: 60px;
+.product-info__price {
+  bottom: 15rem;
+}
+
+.product-info__taste {
+  bottom: 8rem;
+  left: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -webkit-transform: skew(160deg);
           transform: skew(160deg);
-  border-radius: 7px;
+  padding: 1.5rem;
+  border-radius: 5px;
 }
 
-.taste-info div {
+.product-info__taste--notes {
   -webkit-transform: skew(-160deg);
           transform: skew(-160deg);
-  display: inline-block;
-  bottom: 36px;
-  margin: 1px;
-  padding: 15px 17px;
-  text-transform: capitalize;
-  font-style: normal;
-  font-size: 1rem;
+  margin: 0 1rem;
 }
 
-.product-image {
+.product-info__linebreak {
+  height: .4rem;
+  width: 5rem;
   position: absolute;
-  right: -40px;
-  bottom: -40px;
+  right: 1rem;
+  top: 6rem;
 }
 
-.product-image img {
-  height: 500px;
-  width: 160px;
+.product-info__image {
+  padding: 0;
+  position: absolute;
+  bottom: 1.5rem;
+  right: -2rem;
+  height: 80%;
+  width: auto;
 }
 
 .cart-container {
@@ -455,30 +426,48 @@ input {
   padding-bottom: 30px;
 }
 
-.chip--item {
+.chip__item {
   border: 1px solid #cdcdcd;
   border-radius: 20px;
   padding: 7px 15px;
   margin: 5px;
+  color: #333;
 }
 
-.chip--item:hover {
+.chip__item:hover {
   background: #e6e6e6;
   cursor: pointer;
 }
 
-.chip--item.current {
+.chip__item.current {
   background: #e6e6e6;
   border: 1px solid #e6e6e6;
 }
 
 .container {
-  max-width: 114rem;
+  max-width: 120rem;
   margin: 5rem auto;
+}
+
+.header {
+  color: black;
+}
+
+.section-products {
+  color: white;
+}
+
+.products {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+  -ms-grid-columns: (minmax(33rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(33rem, 1fr));
 }
 
 .section-article {
   height: 90vh;
+  padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -493,14 +482,16 @@ input {
 
 .article {
   height: 80vh;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(51, 51, 51, 0.7)), to(rgba(51, 51, 51, 0.7))), url(../assets/whiskey-glass_small.jpg);
   background-image: linear-gradient(to right bottom, rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.7)), url(../assets/whiskey-glass_small.jpg);
   background-size: cover;
   background-position: center;
   border-radius: .8rem;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 90%;
-          flex: 0 0 90%;
+  -ms-flex: 0 0 99%;
+      flex: 0 0 99%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

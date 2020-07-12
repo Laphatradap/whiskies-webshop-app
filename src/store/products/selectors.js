@@ -5,7 +5,8 @@ export const getProductByTitle = (title) => (state) => {
   return state.products.list.find((item) => item.title === title);
 };
 
-export const groupProductByRegion = (state) => {
+
+export const getRegionsForFilter = (state) => {
   if (!state.products.list) return "Loading...";
   return state.products.list.reduce((r, a) => {
     r[a.region] = [...(r[a.region] || []), a];

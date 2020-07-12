@@ -6,11 +6,12 @@
   margin: 0 auto;
   padding-bottom: 30px;
 
-  &--item {
+  &__item {
     border: 1px solid darken($color-grey, 10);
     border-radius: 20px;
     padding: 7px 15px;
     margin: 5px;
+    color: $color-black-light-1;
 
     &:hover {
       background: $color-grey;

@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../store/products/actions";
 import {
   getAllProducts,
-  groupProductByRegion,
+  getRegionsForFilter,
 } from "../../store/products/selectors";
 import ProductCard from "./ProductCard";
 
 const ProductList = () => {
   const dispatch = useDispatch();
   const reduxProducts = useSelector(getAllProducts);
-  const groupByRegion = useSelector(groupProductByRegion);
+  const regionList = useSelector(getRegionsForFilter);
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
@@ -19,15 +19,17 @@ const ProductList = () => {
 
   if (!reduxProducts) return "Loading...";
 
-  let regions = Object.entries(groupByRegion).map(([key]) => {
+  // Render filter option
+  let regions = Object.entries(regionList).map(([key]) => {
     return key;
   });
-  regions.push("all");
-  const sortedFilter = regions.map((item) => item).sort();
 
+  regions.push("all");
+
+  const sortedFilter = regions.map((item) => item).sort();
   const renderFilter = sortedFilter.map((item) => (
     <div
-      className="paragraph chip--item"
+      className="chip__item paragraph"
       key={item}
       onClick={() => setFilter(item)}
     >
@@ -35,38 +37,30 @@ const ProductList = () => {
     </div>
   ));
 
-  const renderAllProducts = () => {
-    return reduxProducts.map((p, index) => <ProductCard key={index} {...p} />);
-  };
+  // Render filtered products
+  const filteredProducts = reduxProducts
+    .filter((product) => product.region === filter)
+    .map((element, index) => <ProductCard key={index} {...element} />);
 
-  const renderProductsByRegion = Object.entries(groupByRegion).map(
-    ([key, value]) => {
-      return (
-        <div key={key}>
-          {key === filter && (
-            <div className="products">
-              {value.map((v, index) => (
-                <ProductCard key={index} {...v} />
-              ))}
-            </div>
-          )}
-        </div>
-      );
-    }
-  );
+  // Render all products
+  const allProducts = reduxProducts.map((product, index) => (
+    <ProductCard key={index} {...product} />
+  ));
 
   return (
-    <div>
-      <div className="product-container">
+    <>
+      <div className="header">
         <div className="heading-primary">Whiskey Selection</div>
         <div className="chip">{renderFilter}</div>
       </div>
-      {filter === "all" ? (
-        <div className="products">{renderAllProducts()}</div>
-      ) : (
-        <div>{renderProductsByRegion}</div>
-      )}
-    </div>
+      <div className="section-products">
+        {filter === "all" ? (
+          <div className="products">{allProducts}</div>
+        ) : (
+          <div className="products">{filteredProducts}</div>
+        )}
+      </div>
+    </>
   );
 };
 
