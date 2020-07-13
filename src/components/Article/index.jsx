@@ -19,7 +19,7 @@ const ArticleContainer = () => {
           // onClick={() => window.open(a.url)}
         >
           <div className="heading-primary heading-primary--main">{a.title}</div>
-          <div className="paragraph paragraph--main">{a.teaser}</div>
+          <div className="paragraph">{a.teaser}</div>
         </div>
       </div>
     ));

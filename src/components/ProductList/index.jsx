@@ -28,11 +28,7 @@ const ProductList = () => {
 
   const sortedFilter = regions.map((item) => item).sort();
   const renderFilter = sortedFilter.map((item) => (
-    <div
-      className="chip__item paragraph"
-      key={item}
-      onClick={() => setFilter(item)}
-    >
+    <div className="chip__item text" key={item} onClick={() => setFilter(item)}>
       {item}
     </div>
   ));
@@ -49,10 +45,8 @@ const ProductList = () => {
 
   return (
     <>
-      <div className="header">
-        <div className="heading-primary">Whiskey Selection</div>
-        <div className="chip">{renderFilter}</div>
-      </div>
+      <div className="heading-primary">Whiskey Selection</div>
+      <div className="chip">{renderFilter}</div>
       <div className="section-products">
         {filter === "all" ? (
           <div className="products">{allProducts}</div>

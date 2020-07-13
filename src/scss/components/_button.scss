@@ -1,12 +1,27 @@
-button {
-  display: block;
-  width: 100%;
+.btn {
+  flex: 0 0 89%;
+  font-size: 1.4rem;
+  font-weight: 700;
   border: none;
-  color: $color-white;
-  padding: 14px 28px;
-  font-size: 16px;
-  border-radius: 9px;
-  cursor: pointer;
+  border-radius: 1rem;
   text-align: center;
   text-transform: uppercase;
+  cursor: pointer;
+
+  &-colored {
+    // background-color: #007B46;
+    // color: $color-white;
+    border: .1rem solid #007B46;
+    background-color: #fff;
+    color: #007B46;
+
+    &:hover {
+      background-color: #007B46;
+      color: $color-white;
+    }
+  }
+
+  &-inline {
+    background-color: red;
+  }
 }

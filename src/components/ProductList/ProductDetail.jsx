@@ -16,21 +16,19 @@ const ProductDetail = (props) => {
   };
 
   return (
-    <div>
-      <div className="product-container">
-        <div className="heading-primary">{productData.title}</div>
-      </div>
+    <div className="container">
+      <div className="heading-primary">{productData.title}</div>
 
-      <div className="products">
-        <ProductCard
-          {...productData}
-          detailPage
-          onAddClick={() => onAddClick(productData)}
-        />
+      <div className="section-product-detail">
+        <div className="products">
+          <ProductCard
+            {...productData}
+            detailPage
+            onAddClick={() => onAddClick(productData)}
+          />
+        </div>
       </div>
-      <div>
-        <Cart />
-      </div>
+      <Cart />
     </div>
   );
 };
